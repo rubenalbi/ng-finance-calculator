@@ -1,0 +1,48 @@
+<div class="container">
+    <form class="row m-5 g-3 needs-validation" [formGroup]="form" (ngSubmit)="guardar()">
+        <div class="col-md-3">
+            <label for="price" class="form-label">Precio</label>
+            <input type="number" class="form-control" id="price" formControlName="price">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="eps" class="form-label">BPA</label>
+            <input type="number" class="form-control" id="eps" formControlName="eps">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="dividend" class="form-label">Dividendo</label>
+            <input type="number" class="form-control" id="dividend" formControlName="dividend">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="estimatedGrowth" class="form-label">Crecimiento esperado %</label>
+            <input type="number" class="form-control" id="estimatedGrowth" formControlName="estimatedGrowth">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Calcular</button>
+        </div>
+    </form>
+    <div class="row m-5">
+        <div class="col-md-12">
+            <p>PER: {{per | number:'0.0-1'}}</p>
+            <p>Rentabilidad: {{rentabilidad | number:'0.0-1'}} %</p>
+            <p>Rentabilidad diviendo: {{rentabilidadDividend| number:'0.0-1'}} %</p>
+        </div>
+        <div class="col-md-12">
+            <h2>A 5 años:</h2>
+            <p>PER: {{per}}</p>
+            <p>Rentabilidad: {{rentabilidad | number:'0.0-1'}} %</p>
+            <p>Rentabilidad diviendo: {{rentabilidadDividend| number:'0.0-1'}} %</p>
+        </div>
+    </div>
+</div>
